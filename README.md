@@ -11,3 +11,5 @@
 - Локальные шрифты
 - Java script
 - React
+
+[Ссылка на проект](https://dobrynyaantonov.github.io/mesto-react/)
