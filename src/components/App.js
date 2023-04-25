@@ -53,7 +53,8 @@ function App() {
       <PopupWithForm name="profile"
         title="Редактировать профиль"
         isOpen={isEditProfilePopupOpen}
-        onClose={handleClosePopups}>
+        onClose={handleClosePopups}
+        buttonText = "Сохранить">
         <input
           id="input-name"
           required=""
@@ -78,14 +79,13 @@ function App() {
           placeholder="описание работы"
         />
         <span id="input-job-error" className="error" />
-        <button className="popup__submit" type="submit">
-          Сохранить
-        </button>
+        
       </PopupWithForm>
 
       <PopupWithForm name="add" title="Новое место"
         isOpen={isAddPlacePopupOpen}
-        onClose={handleClosePopups}>
+        onClose={handleClosePopups}
+        buttonText = "Сохранить">
         <input
           id="input-add"
           required=""
@@ -108,14 +108,12 @@ function App() {
           placeholder="Ссылка на картинку"
         />
         <span id="input-link-error" className="error" />
-        <button className="popup__submit" type="submit">
-          Сохранить
-        </button>
       </PopupWithForm>
 
       <PopupWithForm name="avatar" title="Обновить аватар"
         isOpen={isEditAvatarPopupOpen}
-        onClose={handleClosePopups} >
+        onClose={handleClosePopups}
+        buttonText = "Сохранить" >
         <input
           id="input-avatar-link"
           required=""
@@ -126,15 +124,9 @@ function App() {
           placeholder="Ссылка на картинку"
         />
         <span id="input-avatar-link-error" className="error" />
-        <button className="popup__submit" type="submit">
-          Сохранить
-        </button>
       </PopupWithForm>
 
-      <PopupWithForm name="delete" title="Вы уверены?">
-        <button className="popup__submit popup__submit_delete" type="submit">
-          Да
-        </button>
+      <PopupWithForm name="delete" title="Вы уверены?" buttonText = "Да">
       </PopupWithForm>
       <ImagePopup
 

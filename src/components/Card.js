@@ -7,9 +7,9 @@ function Card(props) {
         props.onCardClick(props.card);
     }
     return (
-        <div className="element" key={card._id}>
+        <div className="element">
             <button className="element__delete" type="button" aria-label="удаление карточки"></button>
-            <img className="element__foto" src={card.link} alt="" aria-label="фото" style={{ backgroundImage: `url(${card.link})` }} onClick={handleClick} />
+            <img className="element__foto" src={card.link} alt={card.name} aria-label="фото" style={{ backgroundImage: `url(${card.link})` }} onClick={handleClick} />
             <div className="element__container">
                 <h2 className="element__text">{card.name}</h2>
                 <button className="element__like" type="button" aria-label="кнопка нравится"></button>
