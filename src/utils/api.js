@@ -47,30 +47,25 @@ class Api {
     }).then(this._checkResponse);
   }
   //удаление карточки
-  deleteCard(cardId){
+  deleteCard(cardId) {
     return fetch(`${this._url}cards/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
     }).then(this._checkResponse);
   }
-//добавление лайка
-  addCardLike(cardId){
-    return fetch(`${this._url}cards/${cardId}/Likes`, {
-      method: "PUT",
-      headers: this._headers,
-    }).then(this._checkResponse);
-  }
+  //добавление и удаление лайка
+  changeLikeCardStatus(cardId, isLiked) {
+    const method = isLiked ? 'PUT' : 'DELETE';
 
-  //удаление лайка
-  deleteCardLike(cardId){
     return fetch(`${this._url}cards/${cardId}/Likes`, {
-      method: "DELETE",
-      headers: this._headers,
-    }).then(this._checkResponse);
+      method,
+      headers: this._headers
+    })
+      .then(this._checkResponse);
   }
 
   //обновление аватара
-  avatar(link){
+  avatar(link) {
     return fetch(`${this._url}users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
